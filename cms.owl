@@ -9,6 +9,2135 @@
     <owl:Ontology rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms">
         <rdfs:comment>CMS configuration for specific purposes</rdfs:comment>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#isRecommendedFor -->
+
+    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#isRecommendedFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#recommends"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#isRequiredFor -->
+
+    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#isRequiredFor">
+        <owl:inverseOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#recommends -->
+
+    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#recommends">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#requires -->
+
+    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv -->
+
+    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#StaticEnvSupportPartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AddressablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AddressablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AdminFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AdminFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Administration -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Administration">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ShoppingCartFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#GoogleSpreadsheet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AggregatorPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AggregatorPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AlertablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AlertablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AllowPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AllowPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AuthenticationPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Analytics -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Analytics">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MarketingFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#GoogleAnalyticsPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AntiSpamFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AntiSpamFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AppStoreDownload -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AppStoreDownload">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MobileAppFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AppStorePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AppStorePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AppStorePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#PwaPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ArticlesFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ArticlesFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocListPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AttributesPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AttributesPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#SortPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AuthenticationPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AuthenticationPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#No"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AutoImagePreviews -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AutoImagePreviews">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImagesFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AutoImagePreviewsPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AutoImagePreviewsPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AutoImagePreviewsPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FileHandlerPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AutoLabelNew -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AutoLabelNew">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ArticlesFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Autocomplete -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Autocomplete">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FormFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CompletablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Autocorrect -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Autocorrect">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlingFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AutomaticEvents -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AutomaticEvents">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Analytics"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#EventablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#AutomaticList -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#AutomaticList">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImagesFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImgListPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#BetaTestingWebsite -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#BetaTestingWebsite">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AdminFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Breadcrumb -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Breadcrumb">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Global"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#recommends"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ResetParametersMessagePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#recommends"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#TitlePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#BreadcrumbPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#BreadcrumbPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#BreadcrumbPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#BrowserDownload -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#BrowserDownload">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MobileAppFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#OffLineOnDemandPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Canonical -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Canonical">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MarketingFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CanonicalPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CanonicalPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CanonicalPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CodeMirrorEditorPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CodeMirrorEditorPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CollectionPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CollectionPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocListPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CompletablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CompletablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ContactForm -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContactForm">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FormFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ContactFormPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContactFormPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#recommends"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FillFormPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#recommends"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ValidateFormPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Fallback"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentBalancerPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentBalancerPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ConverterPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ConverterPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#No"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CopyablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CopyablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomDataPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomDataPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FilterPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomDefinitions -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomDefinitions">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DefinitionFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomErrorPage -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomErrorPage">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlingFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomEvents -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomEvents">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Analytics"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#EventablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomForm -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomForm">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FormFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomNotFoundUrl -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomNotFoundUrl">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlingFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomOneClick -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomOneClick">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AdminFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserAdminPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomRedirect -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomRedirect">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlingFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#DefinitionFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#DefinitionFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DefinitionPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#DefinitionPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#DefinitionPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#DenyAllPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#DenyAllPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AuthenticationPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#DenyPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#DenyPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AuthenticationPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#DepthPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#DepthPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#GlobalMenuPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#DisplayDocPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#DisplayDocPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocListPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#DocInfoPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocInfoPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#DocListPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocListPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AggregatorPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#DocumentInfo -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocumentInfo">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ArticlesFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocInfoPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#DocxLocalImportPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocxLocalImportPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ConverterPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#DocxUrlImportPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocxUrlImportPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ConverterPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#EditablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#EditablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailAddress -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailAddress">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AntiSpamFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailBreakerPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailBreakerPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailBreakerPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailChanges -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailChanges">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomOneClick"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailLogPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailLogPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#LogViewerPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ErrorPagePlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ErrorPagePlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#EventablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#EventablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ExternalGit -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ExternalGit">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AdminFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#RequestPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ExternalServiceIntegrationFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ExternalServiceIntegrationFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Fallback -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Fallback">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#StaticEnvSupportPartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#FaviconPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#FaviconPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#HtmlOutputPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#FileHandlerPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#FileHandlerPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#FillFormPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#FillFormPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#No"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#FilterPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#FilterPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CollectionPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#FilterablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#FilterablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Filtering -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Filtering">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ArticlesFeature"/>
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ShoppingCartFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FilterablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#FolderPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#FolderPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CollectionPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Form -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Form">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AntiSpamFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ValidateFormPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#FormContentSharing -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#FormContentSharing">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FormFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AddressablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#FormFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#FormFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContactFormPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#FragmentSharing -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#FragmentSharing">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FragmentablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#FragmentablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#FragmentablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#GdUrlImportPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#GdUrlImportPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ConverterPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Global -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Global">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#NavigationFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#GlobalMenuPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#GlobalMenuPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#GoogleAnalyticsPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#GoogleAnalyticsPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#GooglePlayDownload -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#GooglePlayDownload">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MobileAppFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#GooglePlayPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#GooglePlayPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#GooglePlayPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#PwaPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#GoogleSemanticIntegration -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#GoogleSemanticIntegration">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MarketingFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#SchemaOrgPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#GoogleSpreadsheet -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#GoogleSpreadsheet">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AdminFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#RequestPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#HideablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#HideablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#HtmlOutputPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#HtmlOutputPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ImagesFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImagesFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ImgListPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImgListPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AggregatorPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#InputVarPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#InputVarPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Interactive -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Interactive">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Global"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CompletablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#InteractiveBrowsing -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#InteractiveBrowsing">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImagesFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#PhotoswipePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#InteractiveToggle -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#InteractiveToggle">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#HideablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LabelNewPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LabelNewPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocListPluginFeature"/>
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#LinkListPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LabelPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LabelPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FilterPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LabelWeightPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LabelWeightPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#SortPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Labeling -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Labeling">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ArticlesFeature"/>
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ShoppingCartFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LazyLoading -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LazyLoading">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImagesFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LimitPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LimitPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CollectionPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LimitsPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LimitsPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentBalancerPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LinkList -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LinkList">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Local"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#LinkListPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LinkListPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LinkListPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Lists -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Lists">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ArticlesFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Local -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Local">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#NavigationFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LocalLinkDefinitions -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LocalLinkDefinitions">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DefinitionFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LocalLinksPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LocalLinksPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DefinitionPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LogViewerPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LogViewerPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#No"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Logo -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Logo">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Breadcrumb"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#LogoPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LogoPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LogoPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#BreadcrumbPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#LowCostWebType -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#LowCostWebType">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#WebType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#MagicWand -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#MagicWand">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomOneClick"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CompletablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#MarkdownPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#MarkdownPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#MarkdownSyntax -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#MarkdownSyntax">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ExternalGit"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MarkdownPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#MarketingFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#MarketingFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#MergeNewPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#MergeNewPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocListPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#MergeablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#MergeablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#MobileAppFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#MobileAppFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#PwaPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#MoreablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#MoreablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#NavigationFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#NavigationFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#No -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#No">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#StaticEnvSupportPartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#NotFoundUrlPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#NotFoundUrlPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlerPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#OffLineOnDemandPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#OffLineOnDemandPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#PwaPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#OgProtocolPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#OgProtocolPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#HtmlOutputPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#PageBalancing -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#PageBalancing">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentBalancerPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Paging -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Paging">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ArticlesFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MoreablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#PathPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#PathPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImgListPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#PhotoswipePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#PhotoswipePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Placeholder -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Placeholder">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImagesFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#PreserveImageSpacePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#PresentationWebType -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#PresentationWebType">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#WebType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#PreserveImageSpacePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#PreserveImageSpacePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#HtmlOutputPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#PrivateContent -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#PrivateContent">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AuthenticationPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ProductList -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ProductList">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ShoppingCartFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocListPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ProductWebType -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ProductWebType">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#WebType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#PublicationWebType -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#PublicationWebType">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#WebType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#PwaPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#PwaPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#QuickForm -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#QuickForm">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FormFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#RedirectionPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#RedirectionPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlerPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#RequestPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#RequestPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ResetParametersMessagePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ResetParametersMessagePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#BreadcrumbPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#RewritePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#RewritePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlerPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#RobotsTxtPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#RobotsTxtPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#HtmlOutputPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#SchemaOrgPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#SchemaOrgPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#HtmlOutputPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ScrollTopFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ScrollTopFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ScrolltopablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ScrolltopablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ScrolltopablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Search -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Search">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#NavigationFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CompletablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#InputVarPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Sharing -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Sharing">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ArticlesFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CopyablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ShoppingCartFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ShoppingCartFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ShoppingCartPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ShoppingCartPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ShoppingCartPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#No"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Siblings -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Siblings">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Local"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#SitemapPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#SitemapPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#SkipPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#SkipPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CollectionPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#SlideablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#SlideablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#SnSemanticIntegration -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#SnSemanticIntegration">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MarketingFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#OgProtocolPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#SortPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#SortPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CollectionPluginFeature"/>
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImgListPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Static -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Static">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Global"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#GlobalMenuPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#StaticEnvSupportPartition -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#StaticEnvSupportPartition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Fallback"/>
+                    <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#No"/>
+                    <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#SyntaxHighlight -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#SyntaxHighlight">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#SyntaxhighlightPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#SyntaxhighlightPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#SyntaxhighlightPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#SysLogPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#SysLogPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#LogViewerPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#TitlePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#TitlePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#BreadcrumbPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#TocablePluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#TocablePluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#JsPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UniqueSalesPoint -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UniqueSalesPoint">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Analytics"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UspPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UnsavedChangesWarning -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UnsavedChangesWarning">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FormFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#EditablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlerPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlerPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Fallback"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlingFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlingFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlHandlerPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlParamPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UrlParamPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CollectionPluginFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UserAdminPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserAdminPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#InputVarPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#No"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UserAlertFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserAlertFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#recommends"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#InputVarPlugin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AlertablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserFeature"/>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UserImagePreviews -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserImagePreviews">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImagesFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserImagePreviewsPluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UserImagePreviewsPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserImagePreviewsPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#FileHandlerPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UserLogPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserLogPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#LogViewerPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UserPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DefinitionPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UserReviews -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserReviews">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#recommends"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#SlideablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#UspPluginFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#UspPluginFeature">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#HtmlOutputPlugin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ValidateFormPlugin -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ValidateFormPlugin">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CmsPlugin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#supportsStaticEnv"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#No"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#ValuePartition -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#ValuePartition"/>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#VariantSwap -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#VariantSwap">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ContentFeature"/>
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ShoppingCartFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#requires"/>
+                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MergeablePluginFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#WebType -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#WebType"/>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes">
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#StaticEnvSupportPartition"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#examplePresentationWebsite -->
+
+    <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#examplePresentationWebsite">
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AutoImagePreviews"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Autocorrect"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AutomaticEvents"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Breadcrumb"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Canonical"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomDefinitions"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomEvents"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailAddress"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailChanges"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Form"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#LazyLoading"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MagicWand"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#PageBalancing"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Placeholder"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#QuickForm"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ScrollTopFeature"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Static"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UniqueSalesPoint"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserAlertFeature"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserImagePreviews"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UserReviews"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/cms#examplePublicationWebsite -->
+
+    <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#examplePublicationWebsite">
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AutoLabelNew"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Autocorrect"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#AutomaticEvents"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#BetaTestingWebsite"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Breadcrumb"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#BrowserDownload"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Canonical"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomDefinitions"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomEvents"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#CustomRedirect"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#DocumentInfo"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#EmailAddress"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ExternalServiceIntegrationFeature"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Filtering"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#GoogleSemanticIntegration"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ImagesFeature"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Interactive"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Labeling"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#LinkList"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Lists"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#LocalLinkDefinitions"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#MarkdownSyntax"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#PageBalancing"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Paging"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#ScrollTopFeature"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Search"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Sharing"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#SnSemanticIntegration"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#Static"/>
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/cms#UniqueSalesPoint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Fallback"/>
+            <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#No"/>
+            <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/cms#Yes"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
