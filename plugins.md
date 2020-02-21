@@ -1,0 +1,93 @@
+AggregatorPlugin
+	DocListPluginFeature
+		DisplayDocPluginFeature
+		CollectionPluginFeature
+			FolderPluginFeature
+			FilterPluginFeature
+				LabelPluginFeature
+				CustomDataPluginFeature
+			UrlParamPluginFeature
+			SortPluginFeature
+				AttributesPluginFeature
+				LabelWeightPluginFeature
+			SkipPluginFeature
+			LimitPluginFeature
+		LabelNewPluginFeature
+		MergeNewPluginFeature
+	ImgListPluginFeature
+		PathPluginFeature
+		SortPluginFeature
+AuthenticationPlugin
+	AllowPluginFeature
+	DenyPluginFeature
+	DenyAllPluginFeature
+BreadcrumbPlugin
+	LogoPluginFeature
+	ResetParametersMessagePluginFeature
+	TitlePluginFeature
+CanonicalPlugin
+ShoppingCartPlugin
+ContactFormPlugin
+ContentBalancerPlugin
+	LimitsPluginFeature
+ConverterPlugin
+	GdUrlImportPluginFeature
+	DocxUrlImportPluginFeature
+	DocxLocalImportPluginFeature
+DefinitionPlugin
+	LocalLinksPluginFeature
+	UserPluginFeature
+DocumentInfoPlugin
+EmailBreakerPlugin
+FileHandlerPlugin
+	AutoImagePreviewsPluginFeature
+	UserImagePreviewsPluginFeature
+FillFormPlugin
+GlobalMenuPlugin
+	DepthPluginFeature
+GoogleAnalyticsPlugin
+HtmlOutputPlugin
+	FaviconPluginFeature
+	RobotsTxtPluginFeature
+	PreserveImageSpacePluginFeature
+	UspPluginFeature
+	SchemaOrgPluginFeature
+	OgProtocolPluginFeature
+InputVarPlugin
+	UserAdminPluginFeature
+LinkListPlugin
+	LabelNewPluginFeature
+LogViewerPlugin
+	UserLogPluginFeature
+	SysLogPluginFeature
+	EmailLogPluginFeature
+MarkdownPlugin
+PwaPlugin
+	OffLineOnDemandPluginFeature
+	AppStorePluginFeature
+	GooglePlayPluginFeature
+SitemapPlugin
+CodeMirrorEditorPlugin
+UrlHandlerPlugin
+	NotFoundUrlPluginFeature
+	RewritePluginFeature
+	RedirectionPluginFeature
+ValidateFormPlugin
+JsPlugin
+	AlertablePluginFeature
+	AddressablePluginFeature
+	CompletablePluginFeature
+	CopyablePluginFeature
+	EditablePluginFeature
+	EventablePluginFeature
+	FilterablePluginFeature
+	FragmentablePluginFeature
+	HideablePluginFeature
+	MergeablePluginFeature
+	MoreablePluginFeature
+	PhotoswipePluginFeature
+	ScrolltopablePluginFeature
+	SyntaxhighlightPluginFeature
+	TocablePluginFeature
+	SlideablePluginFeature
+ErrorPagePlugin

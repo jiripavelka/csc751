@@ -1,0 +1,80 @@
+ContentFeature
+	PageBalancing
+	VariantSwap
+	UserReviews
+	InteractiveToggle
+	SyntaxHighlight
+	FragmentSharing
+	PrivateContent
+ImagesFeature
+	InteractiveBrowsing
+	LazyLoading
+	Placeholder
+	AutomaticList
+ContentAdminFeature
+	CustomOneClick
+		EmailChanges
+		MagicWand
+	ExternalGit
+		MarkdownSyntax
+	GoogleSpreadsheet
+	BetaTestingWebsite
+NavigationFeature
+	Global
+		Static
+		Interactive
+		Breadcrumb
+			Logo
+	Search
+	Local
+		Siblings
+		LinkList
+OfflineBrowsingFeature
+	StoreOnDemand
+AntiSpamFeature
+	EmailAddress
+	Form
+MarketingFeature
+	Analytics
+		UniqueSalesPoint
+		AutomaticEvents
+		CustomEvents
+	GoogleSemanticIntegration
+	SnSemanticIntegration
+	Canonical
+ArticlesFeature
+	Lists
+	Labeling
+	Filtering
+	AutoLabelNew
+	DocumentInfo
+	Sharing
+	Paging
+ShoppingCartFeature
+	ProductList
+	Labeling
+	Filtering
+	Administration
+	VariantSwap
+FormFeature
+	ContactForm
+	QuickForm
+	CustomForm
+	FormContentSharing
+	UnsavedChangesWarning
+	Autocomplete
+ExternalServiceIntegrationFeature
+UrlHandlingFeature
+	Autocorrect
+	CustomRedirect
+	CustomNotFoundUrl
+	CustomErrorPage
+DefinitionFeature
+	CustomDefinitions
+	LocalLinkDefinitions
+ScrollTopFeature
+UserAlertFeature
+MobileAppFeature
+	BrowserDownload
+	AppStoreDownload
+	GooglePlayDownload
