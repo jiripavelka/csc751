@@ -24,7 +24,7 @@ NavigationFeature
 		Static
 		Interactive
 		Breadcrumb
-			Logo
+			HomeLogo
 	Search
 	Local
 		Siblings
