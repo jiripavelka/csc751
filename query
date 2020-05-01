@@ -43,3 +43,15 @@ SELECT ?w ?f ?p WHERE {
 }
 
 #--------------------
+# show additional supported features
+
+SELECT ?w ?f ?p ?x WHERE {
+  ?w cms:mustHave ?f .
+  ?f cms:requires ?p .
+  ?p rdf:type cms:Plugin
+  {
+    ?p cms:supports ?x
+  } MINUS {
+    ?x cms:isMustFor ?w
+  }
+}
