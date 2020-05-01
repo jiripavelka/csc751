@@ -55,3 +55,17 @@ SELECT ?w ?f ?p ?x WHERE {
     ?x cms:isMustFor ?w
   }
 }
+
+#-------------------
+# show unused plugins per website
+
+SELECT ?w ?f ?p ?x WHERE {
+  ?w rdf:type cms:Website .
+  {
+    ?x rdf:type cms:Plugin .
+  } MINUS {
+    ?x cms:supports ?f .
+    ?f cms:isMustFor ?w .
+  }
+}
+

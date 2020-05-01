@@ -384,6 +384,14 @@
         <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalMenuPlugin"/>
         <isStaticReadyFeature rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStaticReadyFeature>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#unusedPlugin -->
+
+    <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#unusedPlugin">
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Plugin"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
