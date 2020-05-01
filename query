@@ -70,3 +70,14 @@ SELECT ?w ?f ?p ?x WHERE {
   }
 }
 
+#------------------
+# show plugin usage
+
+SELECT ?p ?w WHERE {
+  ?p rdf:type cms:Plugin .
+  FILTER (?p = cms:globalMenuPlugin) .
+  OPTIONAL {
+    ?p cms:supports ?f .
+    ?f cms:isMustFor ?w .
+  }
+}
