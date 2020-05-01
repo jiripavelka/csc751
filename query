@@ -61,6 +61,7 @@ SELECT ?w ?f ?p ?x WHERE {
 
 SELECT ?w ?f ?p ?x WHERE {
   ?w rdf:type cms:Website .
+  FILTER (?w = cms:exampleAdminWebsite) .
   {
     ?x rdf:type cms:Plugin .
   } MINUS {
