@@ -81,3 +81,12 @@ SELECT ?p ?w WHERE {
     ?f cms:isMustFor ?w .
   }
 }
+
+#------------------
+# show websites of a type
+
+SELECT ?w WHERE {
+  cms:staticNavigFeature cms:isMustFor ?w .
+  cms:homeLogoNavigFeature cms:isMustFor ?w .
+}
+
