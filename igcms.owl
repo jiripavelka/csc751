@@ -24,49 +24,19 @@
     
 
 
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureIsMustForWebsite -->
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#isMustFor -->
 
-    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureIsMustForWebsite">
-        <owl:inverseOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#websiteMustHaveFeature"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureRequiresFeature -->
-
-    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureRequiresFeature">
-        <owl:inverseOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureSupportsFeature"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureRequiresPlugin -->
-
-    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureRequiresPlugin">
+    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#isMustFor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#pluginSupportsFeature"/>
+        <owl:inverseOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#mustHave"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureSupportsFeature -->
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#mustHave -->
 
-    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureSupportsFeature"/>
-    
-
-
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#pluginIsMustForWebsite -->
-
-    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#pluginIsMustForWebsite">
-        <owl:inverseOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#websiteMustHavePlugin"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#pluginSupportsFeature -->
-
-    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#pluginSupportsFeature">
+    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#mustHave">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     </owl:ObjectProperty>
@@ -89,18 +59,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#websiteMustHaveFeature -->
-
-    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#websiteMustHaveFeature"/>
-    
-
-
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#websiteMustHavePlugin -->
-
-    <owl:ObjectProperty rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#websiteMustHavePlugin"/>
     
 
 
@@ -149,24 +107,6 @@
     
 
 
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#AvailableFeature -->
-
-    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#AvailableFeature">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Feature"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureRequiresPlugin"/>
-                        <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#MustHavePlugin"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
     <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#Feature -->
 
     <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Feature"/>
@@ -188,55 +128,6 @@
             </owl:Class>
         </owl:equivalentClass>
         <owl:disjointWith rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#OptionalPluginNA"/>
-    </owl:Class>
-    
-
-
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#MustHaveFeature -->
-
-    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#MustHaveFeature">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Feature"/>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureIsMustForWebsite"/>
-                                <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Website"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureSupportsFeature"/>
-                                <owl:someValuesFrom>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#featureIsMustForWebsite"/>
-                                        <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Website"/>
-                                    </owl:Restriction>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#MustHavePlugin -->
-
-    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#MustHavePlugin">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Plugin"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#pluginSupportsFeature"/>
-                        <owl:someValuesFrom rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#MustHaveFeature"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -343,12 +234,22 @@
     
 
 
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#breadcrumbNavigFeature -->
+
+    <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#breadcrumbNavigFeature">
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#NavigFeature"/>
+        <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalMenuPlugin"/>
+        <isStaticReadyFeature rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStaticReadyFeature>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#customAdminFeature -->
 
     <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#customAdminFeature">
         <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#AdminFeature"/>
-        <featureRequiresPlugin rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#fillFormPlugin"/>
-        <featureRequiresPlugin rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#inputVarPlugin"/>
+        <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#fillFormPlugin"/>
+        <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#inputVarPlugin"/>
         <isStaticReadyFeature rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isStaticReadyFeature>
     </owl:NamedIndividual>
     
@@ -358,7 +259,8 @@
 
     <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#exampleAdminWebsite">
         <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Website"/>
-        <websiteMustHaveFeature rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#customAdminFeature"/>
+        <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#customAdminFeature"/>
+        <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#markdownSyntaxAdminFeature"/>
     </owl:NamedIndividual>
     
 
@@ -367,7 +269,7 @@
 
     <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#exampleNavigWebsite">
         <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Website"/>
-        <websiteMustHaveFeature rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#homeLogoNavigFeature"/>
+        <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#homeLogoNavigFeature"/>
     </owl:NamedIndividual>
     
 
@@ -390,32 +292,11 @@
     
 
 
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalBreadcrumbNavigFeature -->
-
-    <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalBreadcrumbNavigFeature">
-        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#NavigFeature"/>
-        <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalMenuPlugin"/>
-        <isStaticReadyFeature rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStaticReadyFeature>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalMenuPlugin -->
 
     <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalMenuPlugin">
         <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Plugin"/>
-        <pluginSupportsFeature rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalBreadcrumbNavigFeature"/>
-        <pluginSupportsFeature rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalStaticNavigFeature"/>
         <isMandatoryPlugin rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isMandatoryPlugin>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalStaticNavigFeature -->
-
-    <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalStaticNavigFeature">
-        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#NavigFeature"/>
-        <isStaticReadyFeature rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStaticReadyFeature>
     </owl:NamedIndividual>
     
 
@@ -433,8 +314,7 @@
 
     <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#homeLogoNavigFeature">
         <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#NavigFeature"/>
-        <featureRequiresFeature rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalBreadcrumbNavigFeature"/>
-        <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalBreadcrumbNavigFeature"/>
+        <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#breadcrumbNavigFeature"/>
         <isStaticReadyFeature rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStaticReadyFeature>
     </owl:NamedIndividual>
     
@@ -453,7 +333,7 @@
 
     <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#localLinksNavigFeature">
         <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#NavigFeature"/>
-        <featureRequiresPlugin rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalMenuPlugin"/>
+        <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalMenuPlugin"/>
         <isStaticReadyFeature rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStaticReadyFeature>
     </owl:NamedIndividual>
     
@@ -463,7 +343,7 @@
 
     <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#localSiblingsNavigFeature">
         <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#NavigFeature"/>
-        <featureRequiresPlugin rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalMenuPlugin"/>
+        <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalMenuPlugin"/>
         <isStaticReadyFeature rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStaticReadyFeature>
     </owl:NamedIndividual>
     
@@ -482,7 +362,7 @@
 
     <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#markdownSyntaxAdminFeature">
         <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#AdminFeature"/>
-        <featureRequiresPlugin rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#markdownPlugin"/>
+        <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#markdownPlugin"/>
         <isStaticReadyFeature rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isStaticReadyFeature>
     </owl:NamedIndividual>
     
@@ -492,6 +372,16 @@
 
     <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#searchNavigFeature">
         <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#NavigFeature"/>
+        <isStaticReadyFeature rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStaticReadyFeature>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#staticNavigFeature -->
+
+    <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#staticNavigFeature">
+        <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#NavigFeature"/>
+        <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#globalMenuPlugin"/>
         <isStaticReadyFeature rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStaticReadyFeature>
     </owl:NamedIndividual>
 </rdf:RDF>
