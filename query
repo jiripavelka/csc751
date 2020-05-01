@@ -90,3 +90,23 @@ SELECT ?w WHERE {
   cms:homeLogoNavigFeature cms:isMustFor ?w .
 }
 
+#------------------
+# show static-ready websites
+
+SELECT ?w WHERE {
+  {
+    ?w rdf:type cms:Website .
+  } MINUS {
+    ?w cms:mustHave ?f .
+    ?f a cms:NonStaticFeature .
+  }
+}
+
+#---------------------
+# show non-static features per website
+
+SELECT ?w ?f WHERE {
+    ?w cms:mustHave ?f .
+    ?f a cms:NonStaticFeature .
+}
+
