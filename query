@@ -1,0 +1,34 @@
+# default Snap SPARQL
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?x (STR(?lab) AS ?label) WHERE {
+  ?x rdf:type owl:Class .
+  OPTIONAL {?x rdfs:label ?lab}
+}
+ORDER BY ?label
+
+#--------------------
+#prefixes
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX cms: <http://web.cs.miami.edu/home/jpav751/csc751/igcms#>
+
+#--------------------
+# get required plugins for websites
+
+SELECT ?w ?f ?p ?x WHERE {
+  {
+    ?w cms:websiteMustHaveFeature ?f .
+  } UNION {
+    ?w cms:websiteMustHaveFeature ?t .
+    ?t cms:featureRequiresFeature ?f .
+  }
+  OPTIONAL {
+    ?f cms:featureRequiresPlugin ?p .
+  }
+}
