@@ -110,3 +110,31 @@ SELECT ?w ?f WHERE {
     ?f a cms:NonStaticFeature .
 }
 
+#-----------------------
+# show used full list of features with usage by a website
+# except for mandatory features
+
+SELECT ?f ?m ?s WHERE {
+  ?f rdf:type cms:Feature .
+  MINUS {
+    ?f cms:isMandatory true .
+  }
+  OPTIONAL {
+    ?f cms:isMustFor ?m .
+  }
+  FILTER (?m = cms:sgRestaurantWebsite || !bound(?m)) .
+  OPTIONAL {
+    ?f cms:isShouldFor ?s .
+  }
+  FILTER (?s = cms:sgRestaurantWebsite || !bound(?s)) .
+}
+
+#-------------------
+# relative plugin usage per websites
+
+SELECT ?w ?f ?p WHERE {
+  ?w cms:mustHave ?f .
+  ?f cms:requires ?p .
+  ?p rdf:type cms:Plugin .
+} ORDER BY ?p
+
