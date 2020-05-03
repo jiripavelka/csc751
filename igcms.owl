@@ -167,13 +167,40 @@
     
 
 
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#MandatoryPlugin -->
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#MagazineWebsite -->
 
-    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#MandatoryPlugin">
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#MagazineWebsite">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Plugin"/>
+                    <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Website"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#mustHave"/>
+                        <owl:hasValue rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#filterArticleFeature"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#mustHave"/>
+                        <owl:hasValue rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#labelArticleFeature"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#mustHave"/>
+                        <owl:hasValue rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#listArticleFeature"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Website"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#MandatoryFeature -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#MandatoryFeature">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Feature"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#isMandatory"/>
                         <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
@@ -181,6 +208,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Feature"/>
     </owl:Class>
     
 
@@ -217,10 +245,64 @@
     
 
 
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#PresentationWebsite -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#PresentationWebsite">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Website"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#mustHave"/>
+                                <owl:hasValue rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#contactFormFeature"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#mustHave"/>
+                        <owl:hasValue rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#quickFormFeature"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Website"/>
+    </owl:Class>
+    
+
+
     <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#ProductFeature -->
 
     <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#ProductFeature">
         <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#ProductWebsite -->
+
+    <owl:Class rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#ProductWebsite">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Website"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#mustHave"/>
+                        <owl:hasValue rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#filterProductFeature"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#mustHave"/>
+                        <owl:hasValue rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#labelProductFeature"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#mustHave"/>
+                        <owl:hasValue rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#listProductFeature"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#Website"/>
     </owl:Class>
     
 
