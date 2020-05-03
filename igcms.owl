@@ -324,7 +324,7 @@
         <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#sheetAdminFeature"/>
         <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#socialSeoFeature"/>
         <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#thumbnailImageFeature"/>
-        <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#trimListContentFeatur"/>
+        <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#trimListContentFeature"/>
         <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#urlSeoFeature"/>
         <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#uspSeoFeature"/>
         <shouldHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#definitionContentFeature"/>
@@ -393,14 +393,14 @@
         <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#sheetAdminFeature"/>
         <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#socialSeoFeature"/>
         <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#thumbnailImageFeature"/>
-        <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#trimListContentFeatur"/>
+        <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#trimListContentFeature"/>
         <mustHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#urlSeoFeature"/>
         <shouldHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#diffAdminFeature"/>
         <shouldHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#externalFormFeature"/>
         <shouldHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#schemeSeoFeature"/>
         <shouldHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#searchNavigFeature"/>
         <shouldHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#userAlertAdminFeature"/>
-        <shouldHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#userReviewsContentFeature"/>
+        <shouldHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#reviewsContentFeature"/>
         <shouldHave rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#uspSeoFeature"/>
     </owl:NamedIndividual>
     
@@ -1314,12 +1314,6 @@
         <rdf:type rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#ContentFeature"/>
         <requires rdf:resource="http://web.cs.miami.edu/home/jpav751/csc751/igcms#hideablePlugin"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://web.cs.miami.edu/home/jpav751/csc751/igcms#trimListContentFeatur -->
-
-    <owl:NamedIndividual rdf:about="http://web.cs.miami.edu/home/jpav751/csc751/igcms#trimListContentFeatur"/>
     
 
 
