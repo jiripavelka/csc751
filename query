@@ -108,7 +108,7 @@ SELECT ?w WHERE {
 SELECT ?w ?f WHERE {
     ?w cms:mustHave ?f .
     ?f a cms:NonStaticFeature .
-}
+} ORDER BY ?w
 
 #-----------------------
 # show used full list of features with usage by a website
@@ -153,3 +153,22 @@ SELECT ?p ?f WHERE {
   ?p cms:supports ?f .
   ?f cms:isMandatory true .
 }
+
+#------------------
+# show supported features
+
+SELECT DISTINCT ?f WHERE {
+  ?f rdf:type cms:Feature.
+  MINUS {
+  ?f cms:isMustFor cms:bazaarWebsite.
+  }
+  MINUS {
+  ?f rdf:type cms:Feature.
+  ?f cms:requires ?p.
+  ?p rdf:type cms:Plugin.
+  MINUS {
+    ?x cms:isMustFor cms:bazaarWebsite.
+    ?p cms:supports ?x.
+  }
+  }
+} ORDER BY ?s
